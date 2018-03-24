@@ -1,14 +1,14 @@
 <% if $prospectors { -%> 
 filebeat.prospectors: 
  
-<% $prospectors.each { |p| -%> 
-- type: <% $p['type'] %> 
+<% $prospectors.each |p| { -%> 
+- type: <%= $p['type'] %> 
   enabled: true 
   paths: 
-<% $p['paths'].each { |path| -%> 
-    - <% $path %> 
+<% $p['paths'].each |path| ( -%> 
+    - <%= $path %> 
 <% } -%> 
-  json.keys_under_root: <% p['json_keys_under_root'] %> 
+  json.keys_under_root: <%= p['json_keys_under_root'] %> 
 <% } -%> 
 <% } -%> 
 
