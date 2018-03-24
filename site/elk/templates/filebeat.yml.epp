@@ -1,4 +1,4 @@
-<% if $prospectors { -%> 
+<% if $prospectors != [] { -%> 
 filebeat.prospectors: 
  
 <% $prospectors.each -%>
