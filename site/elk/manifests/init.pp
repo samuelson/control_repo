@@ -9,6 +9,9 @@
 class elk {
   class {'logstash':}
   logstash::plugin {'logstash-input-beats':}
+  logstash::configfile{'beats':
+    source => 'puppet:///module/elk/beats.conf',
+  }
 
   include ::java
   class { 'elasticsearch':
