@@ -15,7 +15,7 @@ class elk::filebeat (
     ensure => present,
   }
   include elastic_stack::repo
-  Class <<| title == "/etc/filebeat/filebeat.yml" |>> { 
+  Elk::Filebeat_config <<| title == "main" |>> { 
     prospectors => [{  
       "type" => "log",  
       "paths" => [  
