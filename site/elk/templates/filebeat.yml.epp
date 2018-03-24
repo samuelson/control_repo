@@ -9,8 +9,8 @@ filebeat.prospectors:
     - <%= $path %> 
 <% } -%> 
   json.keys_under_root: <%= $p['json_keys_under_root'] %> 
+  
 <% } -%> 
 <% } -%> 
-
 output.logstash: 
   hosts: ["<%= $logstash_server %>:<%= $logstash_port %>"]
