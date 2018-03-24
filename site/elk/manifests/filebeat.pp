@@ -23,5 +23,10 @@ class elk::filebeat (
       logstash_port => $logstash_port
     }),
     require => Package['filebeat'],
+    before => Service['filebeat'],
+  }
+  service{'filebeat':
+    ensure => running,
+    enable => true,
   }
 }
