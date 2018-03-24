@@ -15,16 +15,16 @@ class elk::filebeat (
     ensure => present,
   }
   include elastic_stack::repo
-  file {'/etc/filebeat/filebeat.yml':
-    ensure => file,
-    content => epp('elk/filebeat.yml.epp',{
-      prospectors => $prospectors,
-      logstash_server => $logstash_server,
-      logstash_port => $logstash_port
-    }),
-    require => Package['filebeat'],
-    before => Service['filebeat'],
-  }
+  Class <<| title == "/etc/filebeat/filebeat.yml" |>> { 
+    prospectors => [{  
+      "type" => "log",  
+      "paths" => [  
+        "/var/log/puppetlabs/puppetserver/puppetserver.log.json",  
+        "/var/log/puppetlabs/puppetserver/puppetserver-access.log.json",  
+      ],  
+      "json_keys_under_root" => true  
+    }], 
+  } 
   service{'filebeat':
     ensure => running,
     enable => true,
