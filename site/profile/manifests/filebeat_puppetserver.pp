@@ -1,5 +1,5 @@
 class profile::filebeat_puppetserver {
-  elk::filebeat {
+  class {'elk::filebeat':
     prospectors => [{ 
       "type" => "log", 
       "paths" => [ 
