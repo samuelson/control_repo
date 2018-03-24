@@ -9,7 +9,6 @@
 class elk {
   class {'logstash':
     settings => {
-      'server.host' => '0.0.0.0',
       'http.port' => '5044'
       }
   }
