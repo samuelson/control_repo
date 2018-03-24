@@ -7,7 +7,12 @@
 # @example
 #   include elk
 class elk {
-  class {'logstash':}
+  class {'logstash':
+    config => {
+      'server.host' => '0.0.0.0',
+      'http.port' => '5044'
+      }
+  }
 
   include ::java
   class { 'elasticsearch':
