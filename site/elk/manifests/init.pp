@@ -8,7 +8,7 @@
 #   include elk
 class elk {
   class {'logstash':
-    config => {
+    settings => {
       'server.host' => '0.0.0.0',
       'http.port' => '5044'
       }
