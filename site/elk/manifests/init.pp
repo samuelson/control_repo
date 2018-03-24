@@ -28,7 +28,7 @@ class elk {
 
   @@ class {'elk::filebeat_config': 
       logstash_server => 'elk.local', 
-    } 
+     
   } 
 
 }
