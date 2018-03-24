@@ -10,7 +10,7 @@ class elk {
   class {'logstash':}
   logstash::plugin {'logstash-input-beats':}
   logstash::configfile{'beats':
-    source => 'puppet:///site/elk/beats.conf',
+    source => 'puppet:///modules/elk/beats.conf',
   }
 
   include ::java
@@ -26,3 +26,5 @@ class elk {
 
   include elk::filebeat
 }
+  $group = $logstash::logstash_group
+  $mode  = '0640'
