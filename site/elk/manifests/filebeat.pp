@@ -21,6 +21,7 @@ class elk::filebeat (
       prospectors => $prospectors,
       logstash_server => $logstash_server,
       logstash_port => $logstash_port
-    })
+    }),
+    require => Package['filebeat'],
   }
 }
