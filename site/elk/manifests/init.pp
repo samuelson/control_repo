@@ -25,6 +25,10 @@ class elk {
   class{'kibana': config => {'server.host' => '0.0.0.0'}}
 
   include elk::filebeat
+
+  @@ class {'elk::filebeat_config': 
+      logstash_server => 'elk.local', 
+    } 
+  } 
+
 }
-  $group = $logstash::logstash_group
-  $mode  = '0640'
