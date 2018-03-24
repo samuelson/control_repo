@@ -13,7 +13,7 @@ class elk {
       'http.port' => '5044'
       }
   }
-  logstash::plugin {'http':}
+  logstash::plugin {'logstash-http-input':}
 
   include ::java
   class { 'elasticsearch':
