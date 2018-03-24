@@ -26,7 +26,7 @@ class elk {
 
   include elk::filebeat
 
-  @@class {'elk::filebeat_config': 
+  @@elk::filebeat_config {'main':
       logstash_server => 'elk.local',  
   } 
 
