@@ -9,7 +9,7 @@ class profile::puppetboard {
   }
   # Access Puppetboard through pboard.example.com
   class { 'puppetboard::apache::vhost':
-    vhost      => 'localhost',
+    vhost_name => 'localhost',
     port       => 80,
   }
 }
