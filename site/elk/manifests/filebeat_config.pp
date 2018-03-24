@@ -12,3 +12,4 @@ file {'/etc/filebeat/filebeat.yml':
     logstash_port => $logstash_port, 
   }) 
 } 
+}
