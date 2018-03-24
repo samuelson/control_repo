@@ -8,8 +8,6 @@
 #   include elk::filebeat
 class elk::filebeat (
   $prospectors = [],
-  $logstash_server = '127.0.0.1',
-  $logstash_port = '5044'
 ) {
   package {'filebeat':
     ensure => present,
