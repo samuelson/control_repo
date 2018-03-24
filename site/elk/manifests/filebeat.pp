@@ -16,14 +16,7 @@ class elk::filebeat (
   }
   include elastic_stack::repo
   Elk::Filebeat_config <<| title == "main" |>> { 
-    prospectors => [{  
-      "type" => "log",  
-      "paths" => [  
-        "/var/log/puppetlabs/puppetserver/puppetserver.log.json",  
-        "/var/log/puppetlabs/puppetserver/puppetserver-access.log.json",  
-      ],  
-      "json_keys_under_root" => true  
-    }], 
+    prospectors => $prospectors
   } 
   service{'filebeat':
     ensure => running,
