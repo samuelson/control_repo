@@ -1,4 +1,4 @@
-class elk::filebeat_config( 
+define elk::filebeat_config( 
   $prospectors = [], 
   $logstash_server = '127.0.0.1', 
   $logstash_port = '5044', 
