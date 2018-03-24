@@ -7,8 +7,8 @@
 # @example
 #   include elk::filebeat
 class elk::filebeat (
-  logstash_server = '127.0.0.1',
-  logstash_port = '127.0.0.1'
+  $logstash_server = '127.0.0.1',
+  $logstash_port = '127.0.0.1'
 ) {
   package {'filebeat':
     ensure => present,
