@@ -1,2 +1,16 @@
+<% if $prospectors -%> 
+filebeat.prospectors: 
+ 
+<% $prospectors.each do |p| -%> 
+- type: <% $p['type'] %> 
+  enabled: true 
+  paths: 
+<% $p['paths'].each do |path| -%> 
+    - <% $path %> 
+<% end -%> 
+  json.keys_under_root: <% p['json_keys_under_root'] %> 
+<% end -%> 
+<% end -%> 
+
 output.logstash: 
-  hosts: ["<%= $logstash_server %>:<%= $logstash_port %>"] 
+  hosts: ["<%= $logstash_server %>:<%= $logstash_port %>"]
