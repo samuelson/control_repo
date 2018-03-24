@@ -10,7 +10,12 @@ class elk {
   class {'logstash':}
 
   include ::java
-  class {'elasticsearch':}
+  class { 'elasticsearch':
+    jvm_options => [
+      '-Xms256m',
+      '-Xmx256m'
+    ]
+  }
   elasticsearch::instance {'es-01':}
 
   class{'kibana': config => {'server.host' => '0.0.0.0'}}
