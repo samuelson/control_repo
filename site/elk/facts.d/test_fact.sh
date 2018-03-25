@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "hello world"
+echo "test_fact=hello world"
