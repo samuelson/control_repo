@@ -16,5 +16,5 @@ node master.puppet.vm {
 }
 
 node /^web/ {
-  file {"/foo.txt":}
+  file {"/foo.txt": ensure => file}
 }
