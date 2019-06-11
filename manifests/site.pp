@@ -11,6 +11,6 @@ node elk.local {
 
 node master.puppet.vm {
   include dockeragent
-  include dockeragent::node {'web.puppet.vm':}
-  include dockeragent::node {'db.puppet.vm':}
+  dockeragent::node {'web.puppet.vm':}
+  dockeragent::node {'db.puppet.vm':}
 }
