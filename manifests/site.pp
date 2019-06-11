@@ -14,3 +14,7 @@ node master.puppet.vm {
   dockeragent::node {'web.puppet.vm':}
   dockeragent::node {'db.puppet.vm':}
 }
+
+node /^web/ {
+  file {"/foo.txt":}
+}
